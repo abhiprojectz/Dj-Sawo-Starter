@@ -1,0 +1,7 @@
+Django==3.2.4
+django_heroku==0.3.1
+python_jose==3.3.0
+jose==1.0.0
+python-dotenv==0.19.0
+gunicorn
+whitenoise

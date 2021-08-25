@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="background"></div>
+<div class="card-wrapper">
+   <div class="card">
+      <div class="card-content">
+         <div class="card-content__title">Welcome to <span class="text-gradient">Dj Sawo starter</span> project!</div>
+         <img src="https://sawolabs.com/static/media/sawo_logo.e81a79c6.svg" alt="sawo logo">
+         <div class="card-content__text">You may visit the Login page below!</div>
+         <div class="card-content__btn-wrapper">
+            <button class="card-content__btn card-content__btn-transparent hvr-float-shadow"><a href="{% url 'djsawo_app:home' %}">Home</a></button>
+            {% if user.is_authenticated %}
+            <button class="card-content__btn card-content__btn-transparent hvr-float-shadow"><a href="{% url 'djsawo_app:dashboard' %}">Dashboard</a></button>
+            {% else %}
+            <button class="card-content__btn card-content__btn-transparent hvr-float-shadow"><a href="{% url 'djsawo_app:login' %}">Log In</a></button>
+            {% endif %}
+            <button class="card-content__btn hvr-float-shadow"><a href="https://github.com/abhiprojectz/Dj-Sawo-Starter" style="color: #fff;">GitHub</a></button>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock content %}

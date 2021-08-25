@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+
+
+
+{% block content %}
+<style>
+  .main-container {
+        margin: auto;
+        width: 50%;
+        border-radius: 20px;
+        min-height: 80vh;
+      }
+      .login-container {
+        padding: 10px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      iframe {
+        pointer-events: all !important;
+      }
+
+      .card-content {
+        width: 100%;
+        align-items: center;
+      }
+</style>
+
+<div class="background"></div>
+<div class="card-wrapper" style="top:0;">
+   <div class="card">
+      <div class="card-content">
+         <div class="card-content__title"><span class="text-gradient">Login</span></div>
+         {% include "partials/_sawo.html" %}
+         <p>Welcome to passwordless authentication!</p>
+
+         <div class="card-content__btn-wrapper">
+            <button class="card-content__btn card-content__btn-transparent hvr-float-shadow"><a href="{% url 'djsawo_app:home' %}">Home</a></button>
+            <button class="card-content__btn hvr-float-shadow"><a href="https://github.com/abhiprojectz/Dj-Sawo-Starter" style="color: #fff;">GitHub</a></button>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock content %}
